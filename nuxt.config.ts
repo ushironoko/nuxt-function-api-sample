@@ -1,5 +1,5 @@
 import NuxtConfiguration from '@nuxt/config'
-const config: NuxtConfiguration =  {
+const config: NuxtConfiguration = {
   mode: 'spa',
   /*
    ** Headers of the page
@@ -28,7 +28,7 @@ const config: NuxtConfiguration =  {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/vue-function-api'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -43,12 +43,7 @@ const config: NuxtConfiguration =  {
   /*
    ** Build configuration
    */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  }
+  build: {}
 }
 
 export default config
