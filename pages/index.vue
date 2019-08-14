@@ -2,21 +2,26 @@
   <div class="container">
     <div>
       <h1>Nuxt + vue-function-api</h1>
-      <div>{{ `x: ${x}` }}</div>
-      <div>{{ `y: ${y}` }}</div>
+      <v-counter :initial-count="count"></v-counter>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import useMouse from '~/compositions/useMouse'
+import VCounter from '~/components/VCounter.vue'
 
 export default Vue.extend({
-  name: 'App',
-  setup() {
-    const { x, y } = useMouse()
-    return { x, y }
+  components: {
+    VCounter
+  },
+  data() {
+    return {
+      count: 0
+    }
+  },
+  asyncData() {
+    return { count: 100 }
   }
 })
 </script>
